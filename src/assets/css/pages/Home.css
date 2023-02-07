@@ -1,5 +1,7 @@
 .containerBox{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .containerBox Forcast {
     width: 70%;
