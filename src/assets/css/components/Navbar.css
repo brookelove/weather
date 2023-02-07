@@ -1,0 +1,23 @@
+.navContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+.navContainer div {
+    width: 40%;
+}
+.searchContainer {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+.searchContainer input {
+    height: 30px;
+    width: 70%;
+}
+.searchBttn {
+    height: 36px;
+    width: 27%;
+}

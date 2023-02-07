@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import "../assets/css/components/Navbar.css";
 const Navbar = () => {
   const [searchBar, setSearchBar] = useState("");
   const handleChange = (e) => {
     e.preventDefault();
     setSearchBar(e.target.value);
   };
-  //   if (searchBar.length > 0) {
-  //     return searchBar;
-  //   }
-  //   console.log(searchBar);
   return (
-    <nav>
+    <nav className="navContainer">
       <h1>w.</h1>
-      <input
-        // type={search}
-        placeholder="San Diego"
-        onChange={handleChange}
-        value={searchBar}
-      ></input>
-      <button>Search</button>
+      <div className="searchContainer">
+        <input
+          placeholder="San Diego"
+          onChange={handleChange}
+          value={searchBar}
+        ></input>
+        <button className="searchBttn">Search</button>
+      </div>
     </nav>
   );
 };

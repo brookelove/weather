@@ -1,0 +1,15 @@
+.forcastContianer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+div .iconContainer {
+    height: 150px;
+}
+.cardContainer {
+    border: 1px solid grey;
+    box-shadow: 2px 2px 6px grey;
+    width: 234px;
+    border-radius: 2%;
+}
