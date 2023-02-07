@@ -1,0 +1,9 @@
+.containerBox{
+    display: flex;
+}
+.containerBox Forcast {
+    width: 70%;
+}
+.goalMusic {
+    width: 23%;
+}
