@@ -3,16 +3,19 @@ import Forcast from "../components/Forcast";
 import Navbar from "../components/Navbar";
 import Music from "../components/Music";
 import Goals from "../components/Goals";
+import "../assets/css/pages/Home.css";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <h1>Landing Page</h1>
-      <section>
+      <section className="containerBox">
         <Forcast />
-        <Music />
-        <Goals />
+        <div className="goalMusic">
+          <Music />
+          <Goals />
+        </div>
       </section>
     </div>
   );
