@@ -1,6 +1,6 @@
 .containerBox{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .containerBox Forcast {
@@ -9,5 +9,5 @@
 .goalMusic {
     display: flex;
     flex-direction: column;
-    width: 23%;
+    justify-content: center;
 }
