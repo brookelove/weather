@@ -10,11 +10,13 @@ const Navbar = () => {
   return (
     <nav className="navContainer">
       <h1>w.</h1>
+      
       <div className="searchContainer">
         <input
           placeholder="San Diego"
           onChange={handleChange}
           value={searchBar}
+          className="citySearch"
         ></input>
         <button className="searchBttn">Search</button>
       </div>

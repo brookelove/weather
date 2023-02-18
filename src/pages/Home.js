@@ -1,6 +1,6 @@
 import React from "react";
 import Forcast from "../components/Forcast";
-import Navbar from "../components/Navbar";
+import Landing from "../components/Landing";
 import Music from "../components/Music";
 import Goals from "../components/Goals";
 import "../assets/css/pages/Home.css";
@@ -8,14 +8,13 @@ import "../assets/css/pages/Home.css";
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <h1>Landing Page</h1>
+      <Landing />
       <section className="containerBox">
         <Forcast />
-        <div className="goalMusic">
+        {/* <div className="goalMusic">
           <Music />
           <Goals />
-        </div>
+        </div> */}
       </section>
     </div>
   );

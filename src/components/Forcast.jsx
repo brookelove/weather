@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar"
 import "../assets/css/components/Forcast.css";
 const Forcast = () => {
   return (
     <div>
-      <h1>Forcast Area</h1>
+      <Navbar/>
       <section className="forcastContianer">
         <div className="cardContainer">
           <div className="iconContainer"></div>
