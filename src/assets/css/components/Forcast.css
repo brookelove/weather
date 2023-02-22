@@ -5,6 +5,9 @@
     justify-content: space-around;
 
 }
+.hide {
+    display: none;
+}
 .containerBox {
     width: 100%;
 }

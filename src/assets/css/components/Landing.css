@@ -1,3 +1,4 @@
+
 :root {
     --main: bisque;
     --main2: blanchedalmond;
@@ -17,6 +18,12 @@
 .header {
     text-align: center;
     margin: 15% 0;
+}
+.link {
+    color:var(--dark);
+}
+.link::after {
+    color:var(--dark);
 }
 .searchBttn {
     background-color: transparent;

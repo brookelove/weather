@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import "../assets/css/components/Landing.css"
 import { DateTime } from "luxon";
+import Forcast from "./Forcast";
 const Landing = () => {
     let now = DateTime.now()
     const dateTime = now.toLocaleString(DateTime.DATETIME_MED);
@@ -12,7 +13,7 @@ const Landing = () => {
             <div className="header">
             <h3 className="landingPageH1">the w.</h3>
             <h4>{dateTime}</h4>
-            <h3 className="link">GET WEATHER</h3>
+            <a href="/forcast" className="link">GET WEATHER</a>
             </div>
             
         </div>
