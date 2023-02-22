@@ -1,8 +1,12 @@
 .forcastContianer {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
+}
+.containerBox {
+    width: 100%;
 }
 div .iconContainer {
     height: 150px;
@@ -10,7 +14,15 @@ div .iconContainer {
 .cardContainer {
     border: 1px solid grey;
     box-shadow: 2px 2px 6px grey;
-    width: 260px;
+    width: 190px;
     border-radius: 2%;
     margin: 1% 0;
+}
+.big {
+    width: 100%;
+}
+@media  screen and (max-width: 425px) {
+    .cardContainer {
+        width: 100%;
+    }   
 }
