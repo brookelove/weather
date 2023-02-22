@@ -1,31 +1,30 @@
-import React, {useState}from "react";
+import React, {useEffect, useState}from "react";
 import Navbar from "../components/Navbar"
 import "../assets/css/components/Forcast.css";
+import axios from "axios";
 const Forcast = () => {
-  const axios = require("axios");
-
-const options = {
-  method: 'GET',
-  url: 'https://weatherapi-com.p.rapidapi.com/future.json',
-  params: {q: 'London', dt: '2022-12-25'},
-  headers: {
-    'X-RapidAPI-Key': '2962b99f5emshdc16a10ed6cefa9p1375cdjsne2b97985b9dd',
-    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-  }
-};
-
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
+  let apiKey = "ab89816cfc3d4c7890352045232202";
+  const [data, setData] = useState({});
   const [searchBar, setSearchBar] = useState("");
+
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey} &q=${searchBar}&days=6&aqi=no&alerts=no`;
+  
   const handleChange = (e) => {
     e.preventDefault();
     setSearchBar(e.target.value);
   };
+
+  const searchCity = () =>{ 
+      axios.get(url).then((response)=> {
+        setData(response.data)
+        console.log(response.data)
+      })
+  }
+
+
   return (
     <div>
+      
       <div className="searchContainer bigSearch">
                 <input
                 placeholder="San Diego"
@@ -33,11 +32,11 @@ axios.request(options).then(function (response) {
                 value={searchBar}
                 className="citySearch "
                 ></input>
-                <button className="searchBttn" id="searchCity">SEARCH</button>
+                <button className="searchBttn" onClick={searchCity}>SEARCH</button>
             </div>
       <section className="forcastContianer">
       <div className="cardContainer big">
-          <div className="iconContainer"></div>
+          <div className="iconContainer">{}</div>
           <p>Temp:</p>
           <p>Feels Like:</p>
           <p>Humidity:</p>

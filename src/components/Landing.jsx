@@ -10,7 +10,7 @@ const Landing = () => {
     return(
         <div className="landingContainer">
             <div className="header">
-            <h1 className="landingPageH1">w.</h1>
+            <h3 className="landingPageH1">the w.</h3>
             <h4>{dateTime}</h4>
             <h3 className="link">GET WEATHER</h3>
             </div>
