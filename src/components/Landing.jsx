@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import "../assets/css/components/Landing.css"
 import { DateTime } from "luxon";
-import Forcast from "./Forcast";
+// import Forcast from "./Forcast";
 const Landing = () => {
     let now = DateTime.now()
     const dateTime = now.toLocaleString(DateTime.DATETIME_MED);

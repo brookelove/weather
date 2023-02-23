@@ -36,7 +36,7 @@ const Forcast = () => {
                 <button className="searchBttn" onClick={searchCity}>SEARCH</button>
             </div>
       <section className="forcastContianer">
-      data <h1>{data.location.name}</h1>
+      <h1>{data.location.name}</h1>
       <div className="cardContainer big">
         <p>{data.current.condition.text}</p>
           <p>{data.current.wind_dir}</p>

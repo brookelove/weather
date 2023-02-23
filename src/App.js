@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Forcast from "./components/Forcast";
 // import { render } from "@testing-library/react";
+import { getData } from "./data/weather";
 
 function App() {
   return (
