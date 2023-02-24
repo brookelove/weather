@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Landing />
       <section className="containerBox">
-        <GetWeather />
+        {/* <GetWeather /> */}
         {/* <Forcast /> */}
         {/* <div className="goalMusic">
           <Music />
