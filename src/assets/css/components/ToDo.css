@@ -1,0 +1,55 @@
+.toDoContainer {
+    /* background-color: #287f8e; */
+    background-color: #73969c;
+    width: 352px;
+    height: 500px;  
+    border-radius: 40px;
+    box-shadow: 2px 2px 8px grey;
+}
+.toDoHeader {
+    text-align: center;
+    margin-top: 14%;
+}
+.toDoMainContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.toDoSeachContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 7% 0;
+}
+.toDoInput {
+    width:70%;
+    height: 30px;
+    border-radius: 22px;
+    border: solid whitesmoke 0.7px;
+    /* border-color: whitesmoke; */
+    /* color: whitesmoke; */
+    font-size: 14px;
+    /* background: #4c4c4c; */
+}
+.addToDoBttn {
+    border-radius: 70px;
+    width: 34px;
+}
+.newItemContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: soild white 1px;
+    border: solid whitesmoke;
+    border-radius: 30px;
+    width: 95%;
+    height: 39px;
+}
+.toDoButtons {
+    background-color: transparent;
+    border-color: transparent;
+}
+.icon {
+    width: 19px;
+}

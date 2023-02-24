@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "../assets/css/components/Landing.css"
 import { DateTime } from "luxon";
 import GetWeather from "./GetWeather";
+import ToDo from "./ToDo";
 // import Forcast from "./Forcast";
 const Landing = () => {
     let now = DateTime.now()
@@ -16,7 +17,10 @@ const Landing = () => {
             <h4>{dateTime}</h4>
             {/* <a href="/forcast" className="link">GET WEATHER</a> */}
             </div>
+            <span className="divider"></span>
             <GetWeather/>
+            <ToDo/>
+
         </div>
     )
 }
