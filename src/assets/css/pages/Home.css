@@ -3,7 +3,8 @@
     padding:0;
 }
 .homeContainer {
-    background-color: rgba(144,157,157,0.55);
+    /* background-color: rgba(144,157,157,0.55) */
+    background-color: rgb(47,50,59);
     height: 100vh;
 }
 .containerBox{
@@ -19,4 +20,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.searchBar {
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 22px;
+    border: solid #6e4036 2px;
 }

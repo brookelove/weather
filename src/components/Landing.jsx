@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "../assets/css/components/Landing.css"
 import { DateTime } from "luxon";
 import GetWeather from "./GetWeather";
+import Music from "./Music";
 import ToDo from "./ToDo";
 // import Forcast from "./Forcast";
 const Landing = () => {
@@ -22,6 +23,7 @@ const Landing = () => {
                 <GetWeather/>
                 <ToDo/>
             </div>
+            <Music/>
         </div>
     )
 }

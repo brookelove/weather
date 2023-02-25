@@ -19,7 +19,7 @@ const GetWeather=()=> {
         try{
             const data = await getData(city);
             setWeatherData(data);
-            console.log(data)
+            // console.log(data)
             changeBackground(data);
         }catch(error) {
             console.log(error)
@@ -66,7 +66,7 @@ const GetWeather=()=> {
             <div className="searchContainer bigSearch">
                 <input
                 placeholder=" San Diego"
-                className="citySearch "
+                className="searchBar"
                 onChange={handleClickEvent}
                 ></input>
                 <button className="searchBttn" onClick={handleButtonClick}>SEARCH</button>

@@ -1,6 +1,6 @@
 .toDoContainer {
     /* background-color: #73969c; */
-    background-color: #e78b32;
+  background-color: rgb(150, 114, 64);
     width: 352px;
     height: 500px;  
     border-radius: 40px;
@@ -25,8 +25,8 @@
 .toDoInput {
     width:70%;
     height: 30px;
-    border-radius: 22px;
-    border: solid brown 2px;
+    /* border-radius: 22px; */
+    /* border: solid brown 2px; */
     /* border-color: whitesmoke; */
     /* color: whitesmoke; */
     font-size: 14px;
@@ -41,20 +41,23 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: soild whitesmoke 2px;
     border-radius: 30px;
     width: 95%;
     height: 39px;
     margin-bottom: 2%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    border: solid;
+    border-color: white;
+    border-width: 1.5px;
 }
 .toDoButtons {
     background-color: transparent;
     border-color: transparent;
 }
+.completedTask{
+    text-decoration: line-through;
+}
 .icon {
     width: 19px;
 }
-.scroll {
-   
-}
+

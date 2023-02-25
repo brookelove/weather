@@ -24,11 +24,6 @@ const ToDo = () => {
       setToDos([...toDos, {id: uuidv4(), note: input, completed: false}]);
       setText("");
     }
-    // if(!edit){
-      
-    // } else {
-    //   updateToDo(value, edit.id, edit.completed);
-    // }
   }
 
   const handleDone = (id) => {
@@ -38,22 +33,17 @@ const ToDo = () => {
     setToDos(createMap);
   }
 
-  // const handleEdit = (id) => {
-  //   const searchArr = toDos.find((toDo) => toDo.id === id);
-  //   setEdit(searchArr);
-  // }
-
   const handleDelete = ({id}) => {
     setToDos(toDos.filter((toDo) => toDo.id !== id));
   }
 
   return (
     <div className="toDoContainer">
-      <h3 className="toDoHeader">TODO LIST</h3>
+      <h3 className="toDoHeader">HONEY DO</h3>
       <section className="toDoMainContainer">
         {/* this is the area where user can write the notes for the day */}
         <form className="toDoSeachContainer" onSubmit={onSubmit}>
-          <input className="toDoInput" onChange={handleChange} value={input} placeholder= " What do you need to get done?">
+          <input className="toDoInput searchBar" onChange={handleChange} value={input} placeholder= " What do you need to get done?">
           </input>
           <button className="addToDoBttn" type="submit" typeof="submit">+</button>
         </form>
@@ -61,7 +51,7 @@ const ToDo = () => {
             <div className=" newItemContainer" key={toDo.id} id="itemContainer">
                 <p className="item" value={toDo.note} onChange={handleChange}>{toDo.note}</p>
                 <div>
-                    <button className="toDoButtons" onClick={() => handleDone(toDo.id)}>
+                    <button className={toDo.completed ? "toDoButtons completedTask" : "toDoButtons"}  onClick={() => handleDone(toDo.id)}>
                       <img  className="icon" src={doneIcon} title="garbage bag icons"/>
                     </button>
                     {/* <button className="toDoButtons" onClick={() => handleEdit(toDo.id)}>
