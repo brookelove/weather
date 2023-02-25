@@ -5,7 +5,7 @@ import GetWeather from "../components/GetWeather";
 
 const Home = () => {
   return (
-    <div>
+    <div className="homeContainer">
       <Landing />
     </div>
   );

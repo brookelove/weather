@@ -16,11 +16,12 @@ const Landing = () => {
             <h3 className="landingPageH1">the w.</h3>
             <h4>{dateTime}</h4>
             {/* <a href="/forcast" className="link">GET WEATHER</a> */}
-            </div>
             <span className="divider"></span>
-            <GetWeather/>
-            <ToDo/>
-
+            </div>
+            <div className="WeatherNotes">
+                <GetWeather/>
+                <ToDo/>
+            </div>
         </div>
     )
 }

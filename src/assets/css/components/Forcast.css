@@ -6,8 +6,9 @@
     justify-content: space-around;
 
 }
-.hide {
-    display: none;
+.citySearch {
+    background-color: whitesmoke;
+    border: solid brown 2px;
 }
 .containerBox {
     width: 100%;

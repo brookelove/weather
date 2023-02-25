@@ -65,7 +65,7 @@ const GetWeather=()=> {
         <div>
             <div className="searchContainer bigSearch">
                 <input
-                placeholder="San Diego"
+                placeholder=" San Diego"
                 className="citySearch "
                 onChange={handleClickEvent}
                 ></input>
