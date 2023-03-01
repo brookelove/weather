@@ -7,6 +7,7 @@ export default function PasswordGenerator() {
     const specialArr = ["!","@","#","$","%","^","&","*","(",")","-","_","+","=","{","}","[","]","<",">","?","/","|"];
     const numArr = [0,1,2,3,4,5,6,7,8,9];
     let combined = [];
+    let randomArr = [];
 
     const promptUser = (length, lower, upper,special, num) => {
         if(!num && !upper && !lower && !special){
@@ -29,6 +30,11 @@ export default function PasswordGenerator() {
             combined = combined.concat(numArr);
         }
         console.log(combined);
+        for(let i = 0; i < length; i++){
+           let j = Math.floor(Math.random() * combined.length);
+           randomArr.push(combined[j]);
+        }
+        console.log(randomArr.join(""));
 
     }
     const generatePasswordFN = () => {
