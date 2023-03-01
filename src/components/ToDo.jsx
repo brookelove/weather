@@ -38,7 +38,7 @@ const ToDo = () => {
   }
 
   return (
-    <div className="toDoContainer">
+    <div className="toDoContainer boxShadow">
       <h3 className="toDoHeader">HONEY DO</h3>
       <section className="toDoMainContainer">
         {/* this is the area where user can write the notes for the day */}

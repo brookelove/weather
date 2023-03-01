@@ -51,8 +51,9 @@ const Music = () => {
     logStatus = (
       <a
         href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+        className="spotifySignIn"
       >
-        login to spodify
+        LOGIN TO SPOTIFY
       </a>
       
       
@@ -140,7 +141,8 @@ const Music = () => {
       
     </div>
       ) : (
-        <h2>Please Login</h2>
+        // <h2>Please Login</h2>
+        null
       )}
       
       <div className="artistContainer">

@@ -8,6 +8,7 @@ export default function PasswordGenerator() {
     const numArr = [0,1,2,3,4,5,6,7,8,9];
     let combined = [];
     let randomArr = [];
+    let [password, setPassowrd] = useState('');
 
     const promptUser = (length, lower, upper,special, num) => {
         if(!num && !upper && !lower && !special){
@@ -34,7 +35,8 @@ export default function PasswordGenerator() {
            let j = Math.floor(Math.random() * combined.length);
            randomArr.push(combined[j]);
         }
-        console.log(randomArr.join(""));
+        let password = randomArr.join("");
+        setPassowrd(password);
 
     }
     const generatePasswordFN = () => {
@@ -53,8 +55,9 @@ export default function PasswordGenerator() {
     // document.getElementById("passwordBTN").addEventListener(generatePasswordFN);
 
     return (
-        <div className="PasswordContainer">
-            <button className="passwordBTN" onClick={generatePasswordFN}>Generate Password</button>
+        <div className="PasswordContainer boxShadow">
+            <button className="passwordBTN" onClick={generatePasswordFN}>NEW PASSWORD</button>
+             {password ?<div className="passwordContent"><h3 className="passwordTitle">PASSWORD: </h3> <p className="textInnerShadowBeige">{password}</p></div>: null}
         </div>
     )
 }

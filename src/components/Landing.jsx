@@ -6,6 +6,7 @@ import GetWeather from "./GetWeather";
 import Music from "./Music";
 import ToDo from "./ToDo";
 import PasswordGenerator from "./PasswordGenerator";
+import Footer from "./Footer";
 // import Forcast from "./Forcast";
 const Landing = () => {
     let now = DateTime.now()
@@ -21,11 +22,15 @@ const Landing = () => {
             <span className="divider"></span>
             </div>
             <div className="WeatherNotes">
-                {/* <GetWeather/> */}
-                <ToDo/>
+                <GetWeather/>
+                <div>
+                    <ToDo/>
+                    <PasswordGenerator/>
+                </div>
             </div>
             <Music/>
-            <PasswordGenerator/>
+            
+            <Footer/>
         </div>
     )
 }

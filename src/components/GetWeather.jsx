@@ -72,7 +72,7 @@ const GetWeather=()=> {
                 <button className="searchBttn" onClick={handleButtonClick}>SEARCH</button>
             </div>
             {weatherData !== null ? (
-                 <section className="forcastContianer" >
+                 <section className="forcastContianer boxShadow" >
                  
                 
                  <div className="cardContainer big" id="card">

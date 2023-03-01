@@ -4,8 +4,8 @@
 }
 .homeContainer {
     /* background-color: rgba(144,157,157,0.55) */
-    background-color: rgb(47,50,59);
-    height: 100vh;
+    
+    height: 150vh;
 }
 .containerBox{
     display: flex;
