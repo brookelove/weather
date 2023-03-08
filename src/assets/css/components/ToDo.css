@@ -10,6 +10,7 @@
 .toDoHeader {
     text-align: center;
     margin-top: 14%;
+    
 }
 .toDoMainContainer {
     display: flex;

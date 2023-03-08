@@ -53,8 +53,6 @@ const Music = () => {
       >
         LOGIN TO SPOTIFY
       </a>
-      
-      
     );
   } else {
     logStatus = <button onClick={logout} className="button musicSB">LOGOUT</button>;
@@ -74,18 +72,18 @@ const Music = () => {
       });
       setArtists(data.artists.items);
       handleClickEvent();
+      
     } catch (error) {
       console.log(error);
     }
   };
   const showArtists = () => {
-    console.log(artists);
+    // console.log(artists);
     let header = document.getElementById("resultsHeader");
     return (
 
       artists.map((artist) => (
       <div key={artist.id}>
-        
         {artist.images.length ? (
           <div className="musicCard">
             <a href={artist.external_urls.spotify}>
@@ -93,12 +91,12 @@ const Music = () => {
             </a>
             <h3> {artist.name}</h3>
             <SpotifyPlayer
-            token={token}
-      uri={artist.uri}
-      size={size}
-      view={view}
-      theme={theme}
-    />
+              token={token}
+              uri={artist.uri}
+              size={size}
+              view={view}
+              theme={theme}
+            />
           </div>
         ) : (
           <div className="musicCard">
@@ -107,19 +105,16 @@ const Music = () => {
             </a>
           </div>
         )}
-       
       </div>
     )));
   };
 
   return (
     <div className="musicContianer">
-    
+      {logStatus}
       {token ? (
-        <div>
-          
+        <div> 
       <div className="searchBox">
-
           <input
             type="text"
             onChange={handleClickEvent}
@@ -127,18 +122,18 @@ const Music = () => {
             className="searchMS searchBar"
           />
           <button onClick={searchArtist} className="button musicSB">SEARCH</button>
-        {logStatus}
-        
      </div>
-     <div className="artistName">
-      <h1 className="spotifySignIn">Spotify</h1>
-      <h1 className="spotifySignIn">Search Results for: {search} </h1>
-     </div>
+      <div className="artistName">
+          <h1 className="spotifySignIn">Spotify</h1>
+          <h1 className="spotifySignIn">Search Results for: {search} </h1>
+      </div>
      </div>
       ) : (
         null
       )}
+      {/* {logStatus} */}
       <div className="musicContainerwArt">
+        {/* {logStatus} */}
         <div className="artistContainer">
           {showArtists()}
         </div>
