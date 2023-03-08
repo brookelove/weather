@@ -45,13 +45,13 @@ const ToDo = () => {
         <form className="toDoSeachContainer" onSubmit={onSubmit}>
           <input className="toDoInput searchBar" onChange={handleChange} value={input} placeholder= " What do you need to get done?">
           </input>
-          <button className="addToDoBttn" type="submit" typeof="submit">+</button>
+          <button className="button" type="submit" typeof="submit">+</button>
         </form>
           {toDos.map((toDo) => (
             <div className=" newItemContainer" key={toDo.id} id="itemContainer">
-                <p className="item" value={toDo.note} onChange={handleChange}>{toDo.note}</p>
+                <p className={toDo.completed ? "items completedTask" : "items"}  value={toDo.note} onChange={handleChange}>{toDo.note}</p>
                 <div>
-                    <button className={toDo.completed ? "toDoButtons completedTask" : "toDoButtons"}  onClick={() => handleDone(toDo.id)}>
+                    <button className="toDoButtons" onClick={() => handleDone(toDo.id)}>
                       <img  className="icon" src={doneIcon} title="garbage bag icons"/>
                     </button>
                     {/* <button className="toDoButtons" onClick={() => handleEdit(toDo.id)}>

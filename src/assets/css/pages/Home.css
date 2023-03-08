@@ -20,5 +20,6 @@
     background-color: black;
     color: whitesmoke;
     border-radius: 22px;
-    border: solid #6e4036 2px;
+    /* border: solid #6e4036 2px; */
+    border: solid #3f352d 5px;
 }

@@ -22,13 +22,13 @@
 .toDoMainContainer {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 .toDoSeachContainer {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 0 0 7% 0;
 }
 .toDoInput {
@@ -66,6 +66,7 @@
 }
 .completedTask{
     text-decoration: line-through;
+    color:rgb(63, 63, 63)
 }
 .icon {
     width: 19px;
