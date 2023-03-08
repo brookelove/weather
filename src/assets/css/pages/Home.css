@@ -2,11 +2,6 @@
     margin: 0;
     padding:0;
 }
-.homeContainer {
-    /* background-color: rgba(144,157,157,0.55) */
-    
-    height: 150vh;
-}
 .containerBox{
     display: flex;
     justify-content: space-around;

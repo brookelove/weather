@@ -56,7 +56,7 @@ export default function PasswordGenerator() {
 
     return (
         <div className="PasswordContainer boxShadow">
-            <button className="passwordBTN" onClick={generatePasswordFN}>NEW PASSWORD</button>
+            <button className="button" onClick={generatePasswordFN}>NEW PASSWORD</button>
              {password ?<div className="passwordContent"><h3 className="passwordTitle">PASSWORD: </h3> <p className="textInnerShadowBeige">{password}</p></div>: null}
         </div>
     )

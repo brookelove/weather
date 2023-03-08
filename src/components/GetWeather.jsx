@@ -69,7 +69,7 @@ const GetWeather=()=> {
                 className="searchBar"
                 onChange={handleClickEvent}
                 ></input>
-                <button className="searchBttn" onClick={handleButtonClick}>SEARCH</button>
+                <button className="button" onClick={handleButtonClick}>SEARCH</button>
             </div>
             {weatherData !== null ? (
                  <section className="forcastContianer boxShadow" >

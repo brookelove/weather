@@ -23,7 +23,7 @@ const Landing = () => {
             </div>
             <div className="WeatherNotes">
                 <GetWeather/>
-                <div>
+                <div className="ToDoPass">
                     <ToDo/>
                     <PasswordGenerator/>
                 </div>

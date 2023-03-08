@@ -66,6 +66,28 @@
 }
 .WeatherNotes {
     display: flex;
-    /* justify-content: space-around; */
-    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2%;
+    /* flex-wrap: wrap; */
+}
+@media screen and (max-width:768px) {
+    .WeatherNotes{
+        flex-wrap: wrap;
+    }
+    .ToDoPass {
+        margin:5%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+}
+@media  screen and (max-width: 425px) {
+    .ToDoPass {
+        flex-direction: column;
+    }
+    .landingPageH1{
+        font-size: 200px;
+    }
 }
