@@ -6,7 +6,7 @@ import SpotifyPlayer from 'react-spotify-player';
 
 const Music = () => {
   const CLIENT_ID = "51593957d43f4759bfb27cc6b4fa8e67";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://thunderous-selkie-c74591.netlify.app";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const [token, setToken] = useState();
