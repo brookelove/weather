@@ -1,6 +1,6 @@
 import {React, useState, useEfect}from 'react'
 import axios from "axios";
-import { render } from '@testing-library/react';
+import "../assets/css/components/OnceCall.css"
 const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=`;
 const APIKEY = "d83865e8c4925df451bf173012222dc7";
 const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=`;
@@ -91,30 +91,48 @@ const OneCallForecast = () => {
     <button onClick={searchCity}>SEARCH</button>
        {dailyData ? 
        (
-        <div>
+        <div className='weatherContainer'>
             <h1>DAILY</h1>
-            <h1>{dailyData.name}</h1>
-            <p> LONGITUTDE: {dailyData.coord.lon}</p>
-            <p>LATITUDE: {dailyData.coord.lat}</p>
-            <p>HUMIDITY: {dailyData.main.humidity}</p>
-            <p>TEMP: {dailyData.main.temp}</p>
-            <p> ICON: {dailyData.weather.icon}</p>
-            <p>WIND DEGREE: {dailyData.wind.degree}</p>
-            <p>WIND SPEED: {dailyData.wind.speed}</p>
-            <p>WIND SPEED: {dailyData.wind.gust}</p>
-            <p>SUNRISE: {dailyData.sys.sunrise}</p> 
-            <p>SUNSET: {dailyData.sys.sunset}</p> 
+            <section className='dailyContainer boxShadow'>
+                <section className='flexEnd'>
+                    <div>
+                        <p>LON: {dailyData.coord.lon}</p>
+                        <p>LAT: {dailyData.coord.lat}</p>
+                    </div>
+                    <h1 className='city'>{dailyData.name}</h1>
+                </section>
+                <section className='center'>
+                    <p>ICON: {dailyData.weather[0].description}</p>
+                    <p className='temperature'>{dailyData.main.temp}°</p>
+                    <div>
+                        <p>MIN: {dailyData.main.temp_min}°</p>
+                        <p>MIN: {dailyData.main.temp_max}°</p>
+                    </div>
+                </section>
+                <section className='spaceBetween'>
+                    <div>
+                        <p>SUNRISE: {dailyData.sys.sunrise}</p> 
+                        <p>SUNSET: {dailyData.sys.sunset}</p> 
+                    </div>
+                    <div>
+                        <p>WIND DEGREE: {dailyData.wind.deg}</p>
+                        <p>WIND SPEED: {dailyData.wind.speed}</p>
+                        {/* <p>WIND SPEED: {dailyData.wind.gust}</p> */}
+                        <p>HUMIDITY: {dailyData.main.humidity}</p>
+                    </div>
+                </section>    
+            </section>
             <h1>FORECAST</h1>
             {renderEachDay()}
-            <div>
+            <div className='forecastContainer'>
               {fiveDayArr.map((day) =>{
                 console.log(day);
                 return(
-                  <div>
+                  <div className=' boxShadow'>
                     <p>TEMPERATURE: {day.main.temp}</p>
                     <p>HUMIDITY: {day.main.humidity}</p>
                     <p>WIND GUST: {day.wind.gust}</p>
-                    <p>W: {day.weather[0].description}</p>
+                    <p>Icon: {day.weather[0].description}</p>
                   </div>
                 )
                 })}
@@ -124,8 +142,6 @@ const OneCallForecast = () => {
        ):(
         null
        )}
-    {/* //cards that hold one through 5 */}
-    {/* //temp */}
     </>
 
 

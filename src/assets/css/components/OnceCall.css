@@ -1,0 +1,40 @@
+
+.center{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ /* margin: 3%; */
+}
+.spaceBetween{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.flexEnd{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.weatherContainer {
+    margin: 3%;
+    font-size: 20px;
+}
+.dailyContainer{
+    /* width: 90%; */
+    display:flex;
+    justify-content: space-between;
+    /* border: solid black 3px; */
+    border-radius: 26px;
+    margin-bottom: 5%;
+    height: 300px;
+    padding: 3%;
+}
+
+.city {
+    font-size: 50px;
+}
+.forecastContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
