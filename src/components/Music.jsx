@@ -78,10 +78,8 @@ const Music = () => {
     }
   };
   const showArtists = () => {
-    // console.log(artists);
-    let header = document.getElementById("resultsHeader");
+    // let header = document.getElementById("resultsHeader");
     return (
-
       artists.map((artist) => (
       <div key={artist.id}>
         {artist.images.length ? (
