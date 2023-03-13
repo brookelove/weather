@@ -9,15 +9,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: end;
 }
 .flexEnd{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
+.alignCenter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
 .weatherContainer {
     margin: 3%;
     font-size: 20px;
+}
+.searchBarWeather {
+    width: 300px;
+    height: 35px;
+}
+.sunriseIcon{
+    width: 30px;
+}
+.sunsetIcon{
+    width: 30px;
 }
 .dailyContainer{
     /* width: 90%; */
@@ -28,13 +45,92 @@
     margin-bottom: 5%;
     height: 300px;
     padding: 3%;
+    background-color: #ded0c2;
 }
 
 .city {
     font-size: 50px;
 }
+.middleContainer{
+    text-align: center;
+}
+.maxMinContainer{
+    display: flex;
+    /* justify-content: space-around; */
+    /* width: 150px;   */
+    justify-content: space-around;
+    width: 350px;
+    
+}
 .forecastContainer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.forecastCard{
+    width: 215px;
+    height: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    text-align: center;
+    margin: 2%;
+    background-color: #ded0c2;
+    /* margin: 2%; do this for ipad and possibly larger laptops*/
+}
+.dailyIcon{
+    /* transform:scale(0.4); */
+    width: 300px;
+}
+.forecastIcon{
+    /* transform:scale(0.4); */
+    width: 179px;
+}
+.forecastInfo {
+    margin-top: 8%;
+}
+.moonIcon {
+    width: 374px;
+}
+@media screen and (max-width: 1024px) {
+    .dailyIcon{
+        width: 250px;
+    }
+    .maxMinContainer{
+        width: 242px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .dailyContainer{
+        width: 360px;
+        height:500px;
+        display: block;
+    }
+    .middleContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .spaceBetween{
+        flex-direction: row;
+    }
+    .alignCenter{
+        text-align: initial;
+    }
+}
+@media screen and (max-width: 375px){
+    .dailyContainer {
+        width: 321px;
+    }
+    
+}
+@media screen and (max-width: 320px){
+    .dailyContainer {
+        width: 280px;
+    }
+    
 }

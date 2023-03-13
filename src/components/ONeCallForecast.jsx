@@ -1,10 +1,22 @@
 import {React, useState, useEfect}from 'react'
 import axios from "axios";
 import "../assets/css/components/OnceCall.css"
+import clearIcon from "../assets/images/weatherIcons/sunnyIcon.jpg";
+import rainyIcon from "../assets/images/weatherIcons/rainyIcon.jpg";
+import snowIcon from "../assets/images/weatherIcons/snowIcon.jpg";
+import darkCloudyIcon from "../assets/images/weatherIcons/darkCloudyIcon.jpg";
+import cloudyIcon from "../assets/images/weatherIcons/cloudyIcon.jpg";
+import moonIcon from "../assets/images/weatherIcons/moonIcon.png";
+import drizzleIcon from "../assets/images/weatherIcons/drizzleIcon.jpg";
+import thunderstormIcon from "../assets/images/weatherIcons/thunderstormIcon.jpg";
+import sunriseIcon from "../assets/images/icons/sunrise.png";
+import sunsetIcon from "../assets/images/icons/sunset.png";
+
 const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=`;
 const APIKEY = "d83865e8c4925df451bf173012222dc7";
 const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=`;
 const currentDayURL = `https://api.openweathermap.org/data/2.5/weather?lat=`;
+
 
 const OneCallForecast = () => {
     const [dailyData, setDailyData] = useState(null);
@@ -19,40 +31,42 @@ const OneCallForecast = () => {
       console.log(forecast.dt_txt)
       for (let i = 0; i < forecast.length -1 ; i++){
         let time = '12:00:00'
-        // console.log(forecast[i].dt_txt.includes(time));
         if(forecast[i].dt_txt != forecast[i+1].dt_txt){
           if(forecast[i].dt_txt.includes(time)){
-            // console.log(forecast[i]);
             fiveDayArr.push(forecast[i]);
           }
         }
-      }
-      // return (
-      //   fiveDayArr.map((day) =>{
-      //           <div>
-      //             <p>TEMPERATURE: {day.main.temp}</p>
-      //             <p>HUMIDITY: {day.main.humidity}</p>
-      //             <p>WIND GUST: {day.wind.gust}</p>
-      //             {/* <p>W: {day.werather[0].description}</p> */}
-      //           </div>
-      //         })
-      // )      
+      }   
     }
-    // const renderCards = () => {
-    //   console.log(fiveDayArr);
-      
-    //   // return (
-    //   //   fiveDayArr.map((day) =>{
-    //   //           <div>
-    //   //             <p>TEMPERATURE: {day.main.temp}</p>
-    //   //             <p>HUMIDITY: {day.main.humidity}</p>
-    //   //             <p>WIND GUST: {day.wind.gust}</p>
-    //   //             {/* <p>W: {day.werather[0].description}</p> */}
-    //   //           </div>
-    //   //         })
-    //   //   )
-    // }
-    // console.log(fiveDayArr);
+    const convertUnix = (utCode) => {
+        let date = new Date(utCode * 1000);
+        let string = date.toUTCString();
+        let time = string.slice(-11,-4);
+        return time;
+    }
+    const createIcon = (icon)=> {
+        let clear = "clear";
+        let snow = "snow";
+        let rain = "rain";
+        let drizzle = "drizzle";
+        let thunder = "thunder"
+        let clouds = "clouds"
+        if(icon.includes(clear)){
+            return clearIcon;
+        } else if(icon.includes(drizzle)){
+            return drizzleIcon;
+        } else if (icon.includes(snow)){
+            return snowIcon;
+        } else if (icon.includes(rain)){
+            return rainyIcon;
+        } else if (icon.includes(thunder)){
+            return thunderstormIcon;
+        } else if (icon.includes(clouds)){
+            return cloudyIcon;
+        } else {
+            return darkCloudyIcon;
+        }
+    }
     const searchCity = async () => {
         try {
             const { data } = await axios.get(
@@ -66,82 +80,84 @@ const OneCallForecast = () => {
               .then(async (res) => {
                 const currentData = await res[0].json();
                 const forecastData = await res[1].json();
-                // console.log(currentData);
-                // console.log(forecastData);
                 setDailyData(currentData);
                 setForecastData(forecastData);
-                // renderEachDay();
               })
               .catch((error) => {
                 console.log(error);
               });
-
-        }catch (error) {
+        } catch (error) {
+            if (error instanceof TypeError){
+                alert("Make sure you spelled you city correctly")
+            }
             console.log(error);
         }
-        // renderEachDay();
     }
-    // console.log(dailyData);
-    // console.log(forecastData);
     return (
     <>
-    <div>ForeCast</div>
-    {/* //search box */}
-    <input type="text" placeholder='City' onChange={handleClickEvent}></input>
-    <button onClick={searchCity}>SEARCH</button>
+    <div>
+    <input type="text" placeholder='City' onChange={handleClickEvent} className="searchBarWeather searchBar"></input>
+    <button onClick={searchCity} className="button">SEARCH</button>
        {dailyData ? 
        (
         <div className='weatherContainer'>
-            <h1>DAILY</h1>
             <section className='dailyContainer boxShadow'>
                 <section className='flexEnd'>
                     <div>
-                        <p>LON: {dailyData.coord.lon}</p>
-                        <p>LAT: {dailyData.coord.lat}</p>
+                        {/* <p>LON: {convertUnix(dailyData.coord.lon)}</p>
+                        <p>LAT: {convertUnix(dailyData.coord.lat)}</p> */}
                     </div>
                     <h1 className='city'>{dailyData.name}</h1>
                 </section>
-                <section className='center'>
-                    <p>ICON: {dailyData.weather[0].description}</p>
+                <section className='center middleContainer'>
+                    <img src={createIcon(dailyData.weather[0].description)} className="dailyIcon"/>
+                    <p>{dailyData.weather[0].description}</p>
                     <p className='temperature'>{dailyData.main.temp}°</p>
-                    <div>
-                        <p>MIN: {dailyData.main.temp_min}°</p>
-                        <p>MIN: {dailyData.main.temp_max}°</p>
+                    <div className='maxMinContainer'>
+                        <p>L: {dailyData.main.temp_min}°</p>
+                        <p>H: {dailyData.main.temp_max}°</p>
                     </div>
                 </section>
                 <section className='spaceBetween'>
                     <div>
-                        <p>SUNRISE: {dailyData.sys.sunrise}</p> 
-                        <p>SUNSET: {dailyData.sys.sunset}</p> 
+                        <p className='alignCenter'><img src={sunriseIcon} className="sunriseIcon"/> {convertUnix(dailyData.sys.sunrise)} AM PST</p> 
+                        <p className='alignCenter'><img src={sunsetIcon} className="sunsetIcon"/> { convertUnix(dailyData.sys.sunset)} PM PST</p> 
                     </div>
                     <div>
-                        <p>WIND DEGREE: {dailyData.wind.deg}</p>
-                        <p>WIND SPEED: {dailyData.wind.speed}</p>
-                        {/* <p>WIND SPEED: {dailyData.wind.gust}</p> */}
+                        <p>WIND: {dailyData.wind.deg}°</p>
+                        <p>{dailyData.wind.speed} MPH</p>
                         <p>HUMIDITY: {dailyData.main.humidity}</p>
                     </div>
                 </section>    
             </section>
-            <h1>FORECAST</h1>
             {renderEachDay()}
             <div className='forecastContainer'>
               {fiveDayArr.map((day) =>{
                 console.log(day);
                 return(
-                  <div className=' boxShadow'>
-                    <p>TEMPERATURE: {day.main.temp}</p>
-                    <p>HUMIDITY: {day.main.humidity}</p>
-                    <p>WIND GUST: {day.wind.gust}</p>
-                    <p>Icon: {day.weather[0].description}</p>
-                  </div>
+                    <div className='forecastCard boxShadow'>
+                        <div>
+                            <img src={createIcon(day.weather[0].description)} className="forecastIcon"/>
+                            <p>{day.weather[0].description}</p>
+                        </div>
+                        <div>
+                            <p>{day.main.temp}°</p>
+                            <p>HUMIDITY: {day.main.humidity}</p>
+                            <p>WIND GUST: {day.wind.speed}</p>
+                        </div>
+                    </div>
                 )
                 })}
 
             </div>
         </div>
+
        ):(
-        null
+        <div>
+            <img src={moonIcon} alt="moon icon with clouds surrounding it" className='moonIcon'/>
+        </div>    
        )}
+       </div>
     </>
 
 

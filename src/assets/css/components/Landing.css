@@ -82,7 +82,8 @@
     align-items: center;
     margin: 2%;
     /* flex-wrap: wrap; */
-}
+} 
+
 @media screen and (max-width:768px) {
     .WeatherNotes{
         flex-wrap: wrap;
@@ -92,14 +93,24 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
+        width: auto !important;
     }
 }
-@media  screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
     .ToDoPass {
         flex-direction: column;
     }
     .landingPageH1{
-        font-size: 200px;
+        font-size: 169px;
+    }
+    .dateTime{
+        font-size: 80px;
+    }
+    .spaceBetween {
+        flex-direction: row;
+    /* justify-content: space-between; */
+        align-items: flex-end;
+        position: relative;
+        top: 90px;
     }
 }

@@ -7,6 +7,7 @@ import Music from "./Music";
 import ToDo from "./ToDo";
 import PasswordGenerator from "./PasswordGenerator";
 import Footer from "./Footer";
+import OneCallForecast from "./ONeCallForecast";
 const Landing = () => {
     let now = DateTime.now()
     const dateTime = now.toLocaleString(DateTime.DATETIME_MED);
@@ -21,13 +22,15 @@ const Landing = () => {
             <span className="divider"></span>
             </div>
             <div className="WeatherNotes">
-                <GetWeather/>
+                {/* <GetWeather/> */}
+                <OneCallForecast/>
                 <div className="ToDoPass">
+                    {/* <Music/> */}
                     <ToDo/>
                     <PasswordGenerator/>
                 </div>
             </div>
-            <Music/>
+            {/* <Music/> */}
             <Footer/>
         </div>
     )

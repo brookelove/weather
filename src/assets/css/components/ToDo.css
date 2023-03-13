@@ -34,12 +34,7 @@
 .toDoInput {
     width:70%;
     height: 30px;
-    /* border-radius: 22px; */
-    /* border: solid brown 2px; */
-    /* border-color: whitesmoke; */
-    /* color: whitesmoke; */
     font-size: 14px;
-    /* background: #4c4c4c; */
 }
 .addToDoBttn {
     border-radius: 70px;
