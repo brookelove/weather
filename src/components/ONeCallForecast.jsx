@@ -1,4 +1,4 @@
-import {React, useState, useEfect}from 'react'
+import {React, useState}from 'react'
 import axios from "axios";
 import "../assets/css/components/OnceCall.css"
 import clearIcon from "../assets/images/weatherIcons/sunnyIcon.jpg";
@@ -12,7 +12,7 @@ import thunderstormIcon from "../assets/images/weatherIcons/thunderstormIcon.jpg
 import sunriseIcon from "../assets/images/icons/sunrise.png";
 import sunsetIcon from "../assets/images/icons/sunset.png";
 
-const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=`;
+const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=`;
 const APIKEY = "d83865e8c4925df451bf173012222dc7";
 const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=`;
 const currentDayURL = `https://api.openweathermap.org/data/2.5/weather?lat=`;
@@ -31,7 +31,7 @@ const OneCallForecast = () => {
       console.log(forecast.dt_txt)
       for (let i = 0; i < forecast.length -1 ; i++){
         let time = '12:00:00'
-        if(forecast[i].dt_txt != forecast[i+1].dt_txt){
+        if(forecast[i].dt_txt !== forecast[i+1].dt_txt){
           if(forecast[i].dt_txt.includes(time)){
             fiveDayArr.push(forecast[i]);
           }
@@ -110,7 +110,7 @@ const OneCallForecast = () => {
                     <h1 className='city'>{dailyData.name}</h1>
                 </section>
                 <section className='center middleContainer'>
-                    <img src={createIcon(dailyData.weather[0].description)} className="dailyIcon"/>
+                    <img src={createIcon(dailyData.weather[0].description)} alt={dailyData.weather[0].description} className="dailyIcon"/>
                     <p>{dailyData.weather[0].description}</p>
                     <p className='temperature'>{dailyData.main.temp}°</p>
                     <div className='maxMinContainer'>
@@ -120,8 +120,8 @@ const OneCallForecast = () => {
                 </section>
                 <section className='spaceBetween'>
                     <div>
-                        <p className='alignCenter'><img src={sunriseIcon} className="sunriseIcon"/> {convertUnix(dailyData.sys.sunrise)} AM PST</p> 
-                        <p className='alignCenter'><img src={sunsetIcon} className="sunsetIcon"/> { convertUnix(dailyData.sys.sunset)} PM PST</p> 
+                        <p className='alignCenter'><img src={sunriseIcon} alt ="Sunrinse Icon" className="sunriseIcon"/> {convertUnix(dailyData.sys.sunrise)} AM PST</p> 
+                        <p className='alignCenter'><img src={sunsetIcon} alt ="Sunset Icon" className="sunsetIcon"/> { convertUnix(dailyData.sys.sunset)} PM PST</p> 
                     </div>
                     <div>
                         <p>WIND: {dailyData.wind.deg}°</p>
@@ -137,7 +137,7 @@ const OneCallForecast = () => {
                 return(
                     <div className='forecastCard boxShadow'>
                         <div>
-                            <img src={createIcon(day.weather[0].description)} className="forecastIcon"/>
+                            <img src={createIcon(day.weather[0].description)} alt={day.weather[0].description}className="forecastIcon"/>
                             <p>{day.weather[0].description}</p>
                         </div>
                         <div>
