@@ -1,9 +1,8 @@
 
-import React, {useState} from "react";
+import React from "react";
 import "../assets/css/components/Landing.css"
 import { DateTime } from "luxon";
-import GetWeather from "./GetWeather";
-import Music from "./Music";
+// import Music from "./Music";
 import ToDo from "./ToDo";
 import PasswordGenerator from "./PasswordGenerator";
 import Footer from "./Footer";
