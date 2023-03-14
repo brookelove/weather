@@ -52,13 +52,13 @@ const ToDo = () => {
                 <p className={toDo.completed ? "items completedTask" : "items"}  value={toDo.note} onChange={handleChange}>{toDo.note}</p>
                 <div>
                     <button className="toDoButtons" onClick={() => handleDone(toDo.id)}>
-                      <img  className="icon" src={doneIcon} title="garbage bag icons"/>
+                      <img  className="toDoicon" src={doneIcon} title="garbage bag icons"/>
                     </button>
                     {/* <button className="toDoButtons" onClick={() => handleEdit(toDo.id)}>
                       <img  className="icon" src={editIcon} title="garbage bag icons"/>
                     </button> */}
                     <button className="toDoButtons" onClick={() => handleDelete(toDo)}>
-                      <img  className="icon" src={deleteIcon} title="garbage bag icons"/>
+                      <img  className="toDoicon" src={deleteIcon} title="garbage bag icons"/>
                     </button>
                 </div>
             </div>

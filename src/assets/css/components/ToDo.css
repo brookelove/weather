@@ -63,8 +63,8 @@
     text-decoration: line-through;
     color:rgb(63, 63, 63)
 }
-.icon {
-    width: 19px;
+.toDoicon {
+    width: 25px;
 }
 
 @media  screen and (max-width: 320px) {
