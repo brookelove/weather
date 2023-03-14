@@ -67,7 +67,7 @@ const Music = () => {
         params: {
           q: search,
           type: "artist",
-          limit: 6,
+          limit: 1,
         },
       });
       setArtists(data.artists.items);

@@ -1,76 +1,111 @@
-# Getting Started with Create React App
+# the W.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License](https://img.shields.io/badge/License-MIT-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Description](#description)
 
-### `npm start`
+2. [Motivation](#motivation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. [Usage](#usage)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. [Installed Packages](#installed-packages)
 
-### `npm test`
+5. [Mock Up](#mock-up)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. [Future Concepts](#future-concepts)
 
-### `npm run build`
+7. [License](#license)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+8. [Artists](#artists)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+9. [Learn More](#learn-more)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Description
 
-### `npm run eject`
+A common widget application that allows the user to see weather in the city that they search. While having mroe widgets at theyre availiblity.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Motivation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I wanted to test my apbilities and see how fair I have come. I wanted to recreate something new that I could spend my time on. I am glad because it shows how far I have come.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The purpose bend this website is to type inthe user city and recieve a updated weather information about the city I inputed.
+
+## Installed Packages & Apis
+
+    Packages - 
+        Axios
+        Luxon
+        React
+        React-spotify-web-playback
+        
+    APIs -
+        Spotify
+        WeatherApi
+        OpenWeatherApi
+
+## Scripts in this Build
+
+    npm start
+
+    npm test
+
+    npm run build
+
+    npm run eject
+
+## Mock up
+
+[the W.](https://thunderous-selkie-c74591.netlify.app) was built using [netlify](https://www.netlify.com/)
+
+## Future Concepts
+
+Adding my customized icons that are more specific to types of descriptions. I would also like to add in autopcomplete and hope to implement that soon. Adding more widgets, such as a calculator or calender would really round out the website. I did implement Spotify on an earlier run but there we some complications that I have to look into to see why there is a problem.I also want to speerate the data between the API calls and the rendering of the page
+
+## License
+
+MIT License
+
+Copyright (c) 2022 Brooke Love
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Artists
+
+- [iconvector](https://www.vecteezy.com/members/iconvector)
+    - Sunrise & Sunset Icons
+
+- [freepik](freepik.com/free-psd/3d-illustration-mid-autumn-festival-celebration-with-moon-clouds_30877111.htm#query=3d%20weather%20icons&position=15&from_view=search&track=ais)
+    - Moon Icon
+
+- [jordy_pp](https://www.freepik.com/author/jordypp)
+    - Snow Icon
+- [Rabeya Aktar](https://www.vecteezy.com/members/118011177629583746463)
+    - Weather Icons
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you want to reach out and chat that would be amazing. Check out my linkedin and my portforlio
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[brookelovedevelops@gmail.com](brookelovedevelops@gmail.com)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-<a href="https://www.flaticon.com/free-icons/garbage-bag" title="garbage bag icons">Garbage bag icons created by Eucalyp - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/pencil" title="pencil icons">Pencil icons created by Mayor Icons - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by Artem Buz - Flaticon</a>
+[brookelove Profile](!https://github.com/brookelove)
